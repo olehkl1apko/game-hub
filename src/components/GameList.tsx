@@ -1,7 +1,6 @@
 import { SimpleGrid, Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { apiClient } from "@/config";
-import { IGame } from "@/interfaces";
+
+import { useGames } from "@/hooks";
 // import { GameQuery } from "../App";
 // import useGames, { Platform } from "../hooks/useGames";
 // import { Genre } from "../hooks/useGenres";
@@ -12,21 +11,9 @@ import { IGame } from "@/interfaces";
 // interface Props {
 //   gameQuery: GameQuery;
 // }
-interface FetchGames {
-  count: number;
-  results: IGame[];
-}
 
 export const GameList = () => {
-  const [games, setGames] = useState<IGame[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    apiClient
-      .get<FetchGames>("/games")
-      .then(({ data }) => setGames(data.results))
-      .catch((error) => setError(error.message));
-  }, []);
+  const { games, error } = useGames();
 
   return (
     <>
