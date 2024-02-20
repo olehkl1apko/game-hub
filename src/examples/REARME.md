@@ -1,1 +1,1 @@
-# There are examples which is not used in this project
+# There are examples which are not used in this project
