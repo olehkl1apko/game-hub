@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 
 import { useGenres } from "@/hooks";
-import { IGenre } from "@/interfaces";
+import { IGenre } from "@/constants";
 import { getCroppedImageUrl } from "@/services";
 
 interface Props {

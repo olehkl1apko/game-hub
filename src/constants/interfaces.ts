@@ -25,3 +25,8 @@ export interface IGameQuery {
   sortOrder: string;
   searchText: string;
 }
+
+export interface ISortOrders {
+  value: string;
+  label: string;
+}

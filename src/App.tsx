@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 
 import { GameList, GenreList, NavBar } from "@/components";
-import { IGameQuery } from "./interfaces";
-import { PlatformSelector } from "@/components/Utilities";
+import { IGameQuery } from "./constants";
+import { PlatformSelector, SortSelector } from "@/components/Utilities";
 
 function App() {
   const [gameQuery, setGameQuery] = useState<IGameQuery>({} as IGameQuery);
@@ -42,12 +42,12 @@ function App() {
                 }
               />
             </Box>
-            {/* <SortSelector
+            <SortSelector
               sortOrder={gameQuery.sortOrder}
               onSelectSortOrder={(sortOrder) =>
                 setGameQuery({ ...gameQuery, sortOrder })
               }
-            /> */}
+            />
           </Flex>
         </Box>
         <GameList gameQuery={gameQuery} />

@@ -1,6 +1,6 @@
 import { Card, CardBody, Heading, HStack, Image } from "@chakra-ui/react";
 
-import { IGame } from "@/interfaces";
+import { IGame } from "@/constants";
 import { getCroppedImageUrl } from "@/services";
 // import Emoji from "./Emoji";
 import { PlatformIconList, CriticScore } from ".";

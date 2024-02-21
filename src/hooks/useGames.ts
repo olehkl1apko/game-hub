@@ -1,4 +1,4 @@
-import { IGame, IGameQuery } from "@/interfaces";
+import { IGame, IGameQuery } from "@/constants";
 import { useFetch } from "./useFetch";
 
 export const useGames = (gameQuery: IGameQuery) =>
