@@ -3,8 +3,11 @@ import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 
 import { GameList, GenreList, NavBar } from "@/components";
 import { IGameQuery } from "./constants";
-import { PlatformSelector, SortSelector } from "@/components/Utilities";
-import { wrap } from "module";
+import {
+  GameHeading,
+  PlatformSelector,
+  SortSelector,
+} from "@/components/Utilities";
 
 function App() {
   const [gameQuery, setGameQuery] = useState<IGameQuery>({} as IGameQuery);
@@ -35,7 +38,7 @@ function App() {
       </Show>
       <GridItem area="main">
         <Box paddingLeft={2}>
-          {/* <GameHeading gameQuery={gameQuery} /> */}
+          <GameHeading gameQuery={gameQuery} />
           <Flex gap={5} marginBottom={5} wrap="wrap">
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
