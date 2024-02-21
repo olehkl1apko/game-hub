@@ -1,29 +1,31 @@
-import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import { Card, CardBody, Heading, HStack, Image } from "@chakra-ui/react";
 
 import { IGame } from "@/interfaces";
 import { getCroppedImageUrl } from "@/services";
-// import CriticScore from "./CriticScore";
 // import Emoji from "./Emoji";
-import { PlatformIconList } from "@/components/Utilities";
+import { PlatformIconList, CriticScore } from ".";
 
 interface Props {
   game: IGame;
 }
 
 export const GameCard = ({ game }: Props) => {
+  const { background_image, parent_platforms, metacritic, name, rating_top } =
+    game;
+
   return (
     <Card height="100%">
-      <Image src={getCroppedImageUrl(game.background_image)} />
+      <Image src={getCroppedImageUrl(background_image)} />
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
           <PlatformIconList
-            platforms={game.parent_platforms?.map((p) => p.platform)}
+            platforms={parent_platforms?.map((p) => p.platform)}
           />
-          {/* <CriticScore score={game.metacritic} /> */}
+          <CriticScore score={metacritic} />
         </HStack>
         <Heading fontSize="2xl">
-          {game.name}
-          {/* <Emoji rating={game.rating_top} /> */}
+          {name}
+          {/* <Emoji rating={rating_top} /> */}
         </Heading>
       </CardBody>
     </Card>
