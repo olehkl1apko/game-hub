@@ -1,4 +1,4 @@
 import { theme } from "./theme";
-import { apiClient } from "./api-client";
+import { apiClient } from "./apiClient";
 
 export { theme, apiClient };
