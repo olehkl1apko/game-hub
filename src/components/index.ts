@@ -1,4 +1,3 @@
-import { NavBar, GenreList } from "./Layouts";
-import { GameList } from "./GameUI";
+import { NavBar, GenreList, Main } from "./Layouts";
 
-export { NavBar, GameList, GenreList };
+export { NavBar, Main, GenreList };
