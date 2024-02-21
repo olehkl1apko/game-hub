@@ -1,4 +1,4 @@
 import { theme } from "./theme";
-import { apiClient } from "./apiClient";
+import { apiClient, CanceledError } from "./apiClient";
 
-export { theme, apiClient };
+export { theme, apiClient, CanceledError };

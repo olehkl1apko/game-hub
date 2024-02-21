@@ -1,6 +1,6 @@
 import { ColorModeSwitch } from "./Utilities/ColorModeSwitch";
 import { SearchInput } from "./SearchInput";
-import { NavBar } from "./Navbar";
+import { NavBar, GenreList } from "./Layouts";
 import { GameList } from "./GameUI";
 
-export { SearchInput, ColorModeSwitch, NavBar, GameList };
+export { SearchInput, ColorModeSwitch, NavBar, GameList, GenreList };

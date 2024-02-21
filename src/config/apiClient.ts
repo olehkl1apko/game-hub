@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { CanceledError } from "axios";
 
 export const apiClient = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
@@ -6,3 +6,5 @@ export const apiClient = axios.create({
     key: import.meta.env.VITE_RAWG_API_KEY,
   },
 });
+
+export { CanceledError };

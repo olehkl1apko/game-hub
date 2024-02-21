@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
 import { apiClient, CanceledError } from "@/config";
-import { IGame } from "@/interfaces";
+import { IGenre } from "@/interfaces";
 
-interface FetchGames {
+interface FetchGenres {
   count: number;
-  results: IGame[];
+  results: IGenre[];
 }
 
-export const useGames = () => {
-  const [games, setGames] = useState<IGame[]>([]);
+export const useGenres = () => {
+  const [genres, setGenres] = useState<IGenre[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
 
@@ -18,9 +18,9 @@ export const useGames = () => {
     setLoading(true);
 
     apiClient
-      .get<FetchGames>("/games", { signal: controller.signal })
+      .get<FetchGenres>("/genres", { signal: controller.signal })
       .then(({ data }) => {
-        setGames(data.results);
+        setGenres(data.results);
         setLoading(false);
       })
       .catch((error) => {
@@ -32,5 +32,5 @@ export const useGames = () => {
     return () => controller.abort();
   }, []);
 
-  return { games, error, isLoading };
+  return { genres, error, isLoading };
 };
