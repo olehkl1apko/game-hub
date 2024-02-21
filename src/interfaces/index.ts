@@ -18,3 +18,10 @@ export interface IGenre {
   name: string;
   image_background: string;
 }
+
+export interface IGameQuery {
+  genre: IGenre | null;
+  platform: IPlatform | null;
+  sortOrder: string;
+  searchText: string;
+}
