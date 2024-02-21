@@ -4,6 +4,7 @@ import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 import { GameList, GenreList, NavBar } from "@/components";
 import { IGameQuery } from "./constants";
 import { PlatformSelector, SortSelector } from "@/components/Utilities";
+import { wrap } from "module";
 
 function App() {
   const [gameQuery, setGameQuery] = useState<IGameQuery>({} as IGameQuery);
@@ -20,7 +21,9 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar
+          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+        />
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
@@ -33,15 +36,13 @@ function App() {
       <GridItem area="main">
         <Box paddingLeft={2}>
           {/* <GameHeading gameQuery={gameQuery} /> */}
-          <Flex marginBottom={5}>
-            <Box marginRight={5}>
-              <PlatformSelector
-                selectedPlatform={gameQuery.platform}
-                onSelectPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platform })
-                }
-              />
-            </Box>
+          <Flex gap={5} marginBottom={5} wrap="wrap">
+            <PlatformSelector
+              selectedPlatform={gameQuery.platform}
+              onSelectPlatform={(platform) =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+            />
             <SortSelector
               sortOrder={gameQuery.sortOrder}
               onSelectSortOrder={(sortOrder) =>
