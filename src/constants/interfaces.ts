@@ -20,8 +20,8 @@ export interface IGame {
 }
 
 export interface IGameQuery {
-  genre: IGenre | null;
-  platform: IPlatform | null;
+  genreId?: number;
+  platformId?: number;
   sortOrder: string;
   searchText: string;
 }

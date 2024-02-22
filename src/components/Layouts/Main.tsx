@@ -24,7 +24,7 @@ export const Main = ({
         <GameHeading gameQuery={gameQuery} />
         <Flex gap={5} marginBottom={5} wrap="wrap">
           <PlatformSelector
-            selectedPlatform={gameQuery.platform}
+            selectedPlatformId={gameQuery.platformId}
             onSelectPlatform={onSelectPlatform}
           />
           <SortSelector
