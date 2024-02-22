@@ -4,6 +4,12 @@ export interface IPlatform {
   slug: string;
 }
 
+export interface IGenre {
+  id: number;
+  name: string;
+  image_background: string;
+}
+
 export interface IGame {
   id: number;
   name: string;
@@ -13,17 +19,16 @@ export interface IGame {
   rating_top: number;
 }
 
-export interface IGenre {
-  id: number;
-  name: string;
-  image_background: string;
-}
-
 export interface IGameQuery {
   genre: IGenre | null;
   platform: IPlatform | null;
   sortOrder: string;
   searchText: string;
+}
+
+export interface IFetchResponse<T> {
+  count: number;
+  results: T[];
 }
 
 export interface ISortOrders {
