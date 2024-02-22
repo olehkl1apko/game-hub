@@ -28,6 +28,7 @@ export interface IGameQuery {
 
 export interface IFetchResponse<T> {
   count: number;
+  next: string | null;
   results: T[];
 }
 

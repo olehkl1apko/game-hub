@@ -1,3 +1,4 @@
 import { getCroppedImageUrl } from "./getCroppedImageUrl";
+import { fetchedGamesCount } from "./fetchedGamesCount";
 
-export { getCroppedImageUrl };
+export { getCroppedImageUrl, fetchedGamesCount };
