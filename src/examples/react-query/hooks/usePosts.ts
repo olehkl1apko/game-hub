@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import ms from "ms";
 
 interface IPost {
   id: number;
@@ -24,7 +25,7 @@ const usePosts = (query: IPostQuery) => {
           },
         })
         .then((res) => res.data),
-    staleTime: 1 * 60 * 1000,
+    staleTime: ms("1m"),
     keepPreviousData: true,
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.length > 0 ? allPages.length + 1 : undefined;
