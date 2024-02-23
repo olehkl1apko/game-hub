@@ -1,4 +1,12 @@
-import { Card, CardBody, Flex, Heading, HStack, Image } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 import { IGame } from "@/constants";
 import { getCroppedImageUrl } from "@/services";
@@ -9,11 +17,12 @@ interface Props {
 }
 
 export const GameCard = ({ game }: Props) => {
+  const bgColorCard = useColorModeValue("gray.50", "gray.700");
   const { background_image, parent_platforms, metacritic, name, rating_top } =
     game;
 
   return (
-    <Card height="100%">
+    <Card height="100%" backgroundColor={bgColorCard}>
       <Image src={getCroppedImageUrl(background_image)} />
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>

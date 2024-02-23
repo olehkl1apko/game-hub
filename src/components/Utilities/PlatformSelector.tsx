@@ -3,7 +3,7 @@ import { BsChevronDown } from "react-icons/bs";
 
 import { IPlatform } from "@/constants";
 import { usePlatforms } from "@/hooks";
-import { current } from "immer";
+import { IType, findCurrentFilterById } from "@/services";
 
 interface Props {
   onSelectPlatform: (platform: IPlatform) => void;
@@ -15,8 +15,9 @@ export const PlatformSelector = ({
   selectedPlatformId,
 }: Props) => {
   const { data, error } = usePlatforms();
-  const currentPlatform = data?.results.find(
-    (p) => p.id === selectedPlatformId
+  const currentPlatform = findCurrentFilterById(
+    IType.PLATFORM,
+    selectedPlatformId
   );
 
   if (error) return null;
