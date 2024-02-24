@@ -23,16 +23,16 @@ export const GenreList = () => {
 
   return (
     <>
-      <Heading fontSize="2xl" marginTop={9} marginBottom={3}>
+      <Heading fontSize="2xl" marginTop={9} marginBottom={3} width="100%">
         Genres
       </Heading>
       <List>
         {data?.results.map((genre) => (
-          <ListItem key={genre.id} paddingY="5px">
+          <ListItem key={genre.id} paddingY="4px">
             <HStack>
               <Image
-                boxSize="32px"
-                borderRadius={8}
+                boxSize="24px"
+                borderRadius={6}
                 objectFit="cover"
                 src={getCroppedImageUrl(genre.image_background)}
               />
