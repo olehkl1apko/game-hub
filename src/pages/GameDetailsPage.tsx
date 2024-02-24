@@ -1,4 +1,4 @@
-import { GridItem, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
+import { Box, GridItem, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 import {
@@ -13,7 +13,12 @@ const GameDetailPage = () => {
   const { slug } = useParams();
   const { data: game, isLoading, error } = useGameDetails(slug!);
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <Box paddingTop={8}>
+        <Spinner />
+      </Box>
+    );
 
   if (error || !game) throw error;
 
