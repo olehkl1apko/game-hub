@@ -1,6 +1,7 @@
+import { Heading } from "@chakra-ui/react";
+
 import { findCurrentFilterById, ITypeFilter } from "@/services";
 import { useGameQueryStore } from "@/store";
-import { Heading } from "@chakra-ui/react";
 
 export const GameHeading = () => {
   const genreId = useGameQueryStore((s) => s.gameQuery.genreId);

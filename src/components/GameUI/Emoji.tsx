@@ -1,4 +1,5 @@
 import { Image } from "@chakra-ui/react";
+
 import { emojiMap } from "@/constants";
 
 interface Props {

@@ -1,8 +1,9 @@
 import { FormEvent, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
+
 import { useGameQueryStore } from "@/store";
-import { useNavigate } from "react-router-dom";
 
 export const SearchInput = () => {
   const ref = useRef<HTMLInputElement>(null);

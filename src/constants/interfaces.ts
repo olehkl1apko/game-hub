@@ -35,6 +35,13 @@ export interface IGameQuery {
   searchText?: string;
 }
 
+export interface ITrailer {
+  id: number;
+  name: string;
+  preview: string;
+  data: { 480: string; max: string };
+}
+
 export interface IFetchResponse<T> {
   count: number;
   next: string | null;
@@ -51,11 +58,4 @@ export interface IScreenshot {
   image: string;
   width: number;
   height: number;
-}
-
-export interface ITrailer {
-  id: number;
-  name: string;
-  preview: string;
-  data: { 480: string; max: string };
 }

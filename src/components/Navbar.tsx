@@ -2,7 +2,7 @@ import { Flex, Image, useColorModeValue } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 import logo from "@/assets/logo.webp";
-import { ColorModeSwitch, SearchInput } from "@/components/Filters";
+import { ColorModeSwitch, SearchInput } from "./Filters";
 
 export const NavBar = () => {
   const bgColor = useColorModeValue("white", "gray.800");

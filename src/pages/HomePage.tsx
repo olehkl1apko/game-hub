@@ -1,5 +1,6 @@
-import { GenreList, Main } from "@/components";
 import { Grid, Show, GridItem } from "@chakra-ui/react";
+
+import { GenreList, Main } from "@/components";
 
 const HomePage = () => {
   return (
