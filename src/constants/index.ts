@@ -5,8 +5,17 @@ import {
   IGenre,
   ISortOrders,
   IFetchResponse,
+  IScreenshot,
+  ITrailer,
+  IPublisher,
 } from "./interfaces";
-import { sortOrders, countSkeletons, iconMap, emojiMap } from "./variables";
+import {
+  sortOrders,
+  countSkeletons,
+  iconMap,
+  emojiMap,
+  limitSymbolsDescription,
+} from "./variables";
 
 export type {
   IPlatform,
@@ -15,5 +24,14 @@ export type {
   IGenre,
   ISortOrders,
   IFetchResponse,
+  IScreenshot,
+  ITrailer,
+  IPublisher,
 };
-export { sortOrders, countSkeletons, iconMap, emojiMap };
+export {
+  sortOrders,
+  countSkeletons,
+  iconMap,
+  emojiMap,
+  limitSymbolsDescription,
+};

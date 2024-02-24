@@ -22,7 +22,7 @@ export class APIClient<T> {
       .then((res) => res.data);
   };
 
-  get = async (id: number | string) => {
+  getById = async (id: number | string) => {
     return await axiosInstance
       .get<T>(this.endpoint + "/" + id)
       .then((res) => res.data);

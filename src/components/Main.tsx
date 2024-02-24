@@ -1,10 +1,7 @@
-import { GameList } from "@/components/GameUI";
-import {
-  GameHeading,
-  PlatformSelector,
-  SortSelector,
-} from "@/components/Utilities";
 import { Box, Flex } from "@chakra-ui/react";
+
+import { GameHeading, GameList } from "@/components/GameUI";
+import { PlatformSelector, SortSelector } from "@/components/Filters";
 
 export const Main = () => {
   return (

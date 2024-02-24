@@ -1,3 +1,5 @@
-import { NavBar, GenreList, Main } from "./Layouts";
+import { NavBar } from "./Navbar";
+import { GenreList } from "./GenreList";
+import { Main } from "./Main";
 
 export { NavBar, Main, GenreList };

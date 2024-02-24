@@ -45,3 +45,5 @@ export const emojiMap: { [key: number]: ImageProps } = {
   4: { src: thumbsUp, alt: "recommended", boxSize: "25px" },
   5: { src: bullsEye, alt: "exceptional", boxSize: "35px" },
 };
+
+export const limitSymbolsDescription = 300;
