@@ -1,39 +1,22 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { GameList } from "@/components/GameUI";
 import {
   GameHeading,
   PlatformSelector,
   SortSelector,
 } from "@/components/Utilities";
-import { GameList } from "@/components/GameUI";
-import { IGameQuery, IPlatform } from "@/constants";
+import { Box, Flex } from "@chakra-ui/react";
 
-interface Props {
-  gameQuery: IGameQuery;
-  onSelectPlatform: (platform: IPlatform) => void;
-  onSelectSortOrder: (sortOrder: string) => void;
-}
-
-export const Main = ({
-  gameQuery,
-  onSelectPlatform,
-  onSelectSortOrder,
-}: Props) => {
+export const Main = () => {
   return (
     <>
       <Box paddingLeft={2}>
-        <GameHeading gameQuery={gameQuery} />
+        <GameHeading />
         <Flex gap={5} marginBottom={5} wrap="wrap">
-          <PlatformSelector
-            selectedPlatformId={gameQuery.platformId}
-            onSelectPlatform={onSelectPlatform}
-          />
-          <SortSelector
-            sortOrder={gameQuery.sortOrder}
-            onSelectSortOrder={onSelectSortOrder}
-          />
+          <PlatformSelector />
+          <SortSelector />
         </Flex>
       </Box>
-      <GameList gameQuery={gameQuery} />
+      <GameList />
     </>
   );
 };

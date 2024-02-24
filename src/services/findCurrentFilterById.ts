@@ -1,6 +1,6 @@
 import { useGenres, usePlatforms } from "@/hooks";
 
-export enum IType {
+export enum ITypeFilter {
   GENRE = "byGenre",
   PLATFORM = "byPlatform",
 }
@@ -10,7 +10,7 @@ interface IData {
   name: string;
 }
 
-export const findCurrentFilterById = (type: IType, id?: number) => {
+export const findCurrentFilterById = (type: ITypeFilter, id?: number) => {
   switch (type) {
     case "byGenre":
       const { data: genres } = useGenres();

@@ -1,5 +1,10 @@
 import { getCroppedImageUrl } from "./getCroppedImageUrl";
 import { fetchedGamesCount } from "./fetchedGamesCount";
-import { findCurrentFilterById, IType } from "./findCurrentFilterById";
+import { findCurrentFilterById, ITypeFilter } from "./findCurrentFilterById";
 
-export { getCroppedImageUrl, fetchedGamesCount, findCurrentFilterById, IType };
+export {
+  getCroppedImageUrl,
+  fetchedGamesCount,
+  findCurrentFilterById,
+  ITypeFilter,
+};

@@ -1,13 +1,17 @@
-import { PostList } from "./react-query/PostList";
-import { TodoForm } from "./react-query/TodoForm";
-import { TodoList } from "./react-query/TodoList";
+import HomePage from "./state-management/Homepage";
+import NavBar from "./state-management/NavBar";
+// import AuthProvider from "./state-management/auth/AuthProvider";
+import TasksProvider from "./state-management/tasks/TasksProvider";
 
 function AppExamples() {
   return (
     <>
-      <TodoForm />
-      <TodoList />
-      {/* <PostList /> */}
+      {/* <AuthProvider> */}
+      <TasksProvider>
+        <NavBar />
+        <HomePage />
+      </TasksProvider>
+      {/* </AuthProvider> */}
     </>
   );
 }

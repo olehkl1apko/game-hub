@@ -22,8 +22,8 @@ export interface IGame {
 export interface IGameQuery {
   genreId?: number;
   platformId?: number;
-  sortOrder: string;
-  searchText: string;
+  sortOrder?: string;
+  searchText?: string;
 }
 
 export interface IFetchResponse<T> {

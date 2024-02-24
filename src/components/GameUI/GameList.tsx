@@ -1,19 +1,14 @@
-import { Fragment } from "react";
 import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import { Fragment } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import { GameCard, GameCardContainer, GameCardSkeleton } from ".";
-import { IGameQuery, countSkeletons } from "@/constants";
+import { countSkeletons } from "@/constants";
 import { useGames } from "@/hooks";
 import { fetchedGamesCount } from "@/services";
+import { GameCard, GameCardContainer, GameCardSkeleton } from ".";
 
-interface Props {
-  gameQuery: IGameQuery;
-}
-
-export const GameList = ({ gameQuery }: Props) => {
-  const { data, error, isLoading, hasNextPage, fetchNextPage } =
-    useGames(gameQuery);
+export const GameList = () => {
+  const { data, error, isLoading, hasNextPage, fetchNextPage } = useGames();
 
   if (error) return <Text>{error.message}</Text>;
 

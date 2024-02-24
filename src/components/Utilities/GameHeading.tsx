@@ -1,16 +1,15 @@
+import { findCurrentFilterById, ITypeFilter } from "@/services";
+import { useGameQueryStore } from "@/store";
 import { Heading } from "@chakra-ui/react";
-import { IGameQuery } from "@/constants";
-import { findCurrentFilterById, IType } from "@/services";
 
-interface Props {
-  gameQuery: IGameQuery;
-}
+export const GameHeading = () => {
+  const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const currentGenre = findCurrentFilterById(ITypeFilter.GENRE, genreId);
 
-export const GameHeading = ({ gameQuery }: Props) => {
-  const currentGenre = findCurrentFilterById(IType.GENRE, gameQuery.genreId);
+  const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
   const currentPlatform = findCurrentFilterById(
-    IType.PLATFORM,
-    gameQuery.platformId
+    ITypeFilter.PLATFORM,
+    platformId
   );
 
   return (
